@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stylish Tutorial Website</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* Custom Styling for Navbar */
+    .navbar {
+      background-color: green;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    .navbar-brand, .nav-link {
+      color: #f5f5f5 !important;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      transition: color 0.3s, transform 0.3s;
+    }
+    .navbar-brand:hover, .nav-link:hover {
+      color: #ffcc00 !important;
+      transform: scale(1.1);
+    }
+    /* Dropdown menu style */
+    .dropdown-menu {
+      background-color:white;
+      border: none;
+    }
+    .dropdown-item {
+      color:green;
+    }
+    .dropdown-item:hover {
+      background-color:yellow;
+      color: green;
+    }
+ .hero {
+      background-color: #f5f5f5;
+      padding-top: 20px;
+      
+    }
+.carousel-item img {
+      height:fit-content;
+      object-fit: cover;
+
+
+      
+    }
+    .course-details {
+      background-color: #333;
+    
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+    }
+    .course-details h2 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    }
+    .course-details p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+    .course-details .btn {
+      background-color: #ffcc00;
+      color: #333;
+      font-weight: bold;
+      border: none;
+      padding: 10px 25px;
+      border-radius: 25px;
+      transition: background-color 0.3s;
+    }
+    .course-details .btn:hover {
+      background-color: #ff9900;
+      color: white;
+    }
+.course-details {
+      background:rgb(16, 226, 16);
+      color: white;
+      padding: 60px 20px;
+      margin: 40px auto;
+      text-align: center;
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    /* Image Styles */
+    .course-details img {
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      width: 100%;
+      max-width: 150px;
+      height: fit-content;
+      margin: 10px;
+      transition: transform 0.3s ease;
+    }
+    .course-details img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Updated View Courses Button */
+    .btn-view-courses {
+      background-color:green;
+      color: white;
+      font-weight: bold;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 50px;
+      transition: all 0.4s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      font-size: 1.1rem;
+      margin-top: 20px;
+    }
+    .btn-view-courses:hover {
+      background: linear-gradient(45deg, #ff9900, #ffdd33);
+      color: #333;
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Courses Section */
+    .course-box {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background-color: yellow;
+      color: green;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 15px;
+      transition: transform 1s ease;
+    }
+    .course-box:hover {
+      transform: rotate(360deg);
+    }
+ /* Service Section */
+    .service-section {
+      padding: 50px 0;
+      background: #f1f1f1;
+      text-align: center;
+    }
+
+    /* Service Box with 360-degree Rotation Animation */
+    .service-box {
+      width: 220px;
+      height: 220px;
+      margin: 20px;
+      border-radius: 10px;
+      background-color:yellow;
+      display: inline-block;
+      text-align: center;
+      vertical-align: top;
+      transition: transform 1s ease;
+     
+      position: relative;
+      animation: rotate360 3s infinite linear; /* Default animation */
+    }
+
+    /* 360-degree rotation animation */
+    @keyframes rotate360 {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* View Details Button Styling */
+    .btn-view-details {
+      background: green;
+      color:white;
+      font-weight: bold;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 50px;
+      font-size: 1rem;
+      transition: all 0.4s ease;
+      margin-top: 20px;
+    }
+
+    .btn-view-details:hover {
+      background: #ff9900;
+      color: #333;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .service-box .details {
+      display: none;
+      padding: 20px;
+      background: #fff;
+      margin-top: 10px;
+      border-radius: 5px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+ #teachers {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: space-around;
+    }
+
+    .teacher-card {
+      width: 200px;
+      border: 2px solid #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .photo-container {
+      width: 100%;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .teacher-photo {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    .teacher-details {
+      padding: 10px;
+    }
+
+    .show-details-btn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .show-details-btn:hover {
+      background-color: #45a049;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgb(0,0,0);
+      background-color: rgba(0,0,0,0.4);
+      padding-top: 60px;
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: 5% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      border-radius: 10px;
+    }
+
+    .close-btn {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .close-btn:hover,
+    .close-btn:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
+.content-wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .content {
+      flex: 1; /* Pushes the footer to the bottom */
+    }
+ #about-container {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      color: green;
+      margin-bottom: 1.5rem;
+      
+    }
+
+    .meter-circle {
+      position: relative;
+      display: inline-block;
+      width: 120px;
+      height: 120px;
+      margin: 20px;
+      border: 4px solid purple;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 1.2rem;
+      color: #0056b3;
+      font-weight: bold;
+      overflow: hidden;
+      line-height: 120px; /* Center text vertically */
+    }
+
+    .meter-circle .meter {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 50%;
+      animation: rotate 3s linear infinite;
+      background: conic-gradient(
+        red var(--exp, 50%),
+        green var(--exp, 50%) 75%,
+        blue var(--exp, 75%) 90%,
+        yellow var(--exp, 90%)
+      );
+    }
+
+    /* Show percentage inside the circle */
+    .percentage {
+      position: relative;
+      z-index: 1;
+      color: #fff; /* White text color for better visibility */
+      font-size: 1.5rem; /* Increase font size for better readability */
+    }
+
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .subject-label {
+      font-size: 1rem;
+      color: #333;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+  
+
+
+    #footer {
+      background-color: green;
+      color: white;
+      padding: 40px 0;
+      text-align: center;
+    }
+
+    #footer .social-icons a {
+      color: white;
+      margin: 0 15px;
+      font-size: 24px;
+      transition: color 0.3s;
+    }
+
+    #footer .social-icons a:hover {
+      color: yellow;
+    }
+
+    .footer-contact {
+      margin-top: 20px;
+    }
+
+    #form-container {
+      max-width: 800px;
+      margin: 40px auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    fieldset {
+      border: 2px solid #4CAF50;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 0;
+    }
+
+    legend {
+      font-size: 1.4em;
+      color: #4CAF50;
+      font-weight: bold;
+      padding: 0 10px;
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    select {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      box-sizing: border-box;
+      transition: all 0.3s ease;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="number"]:focus,
+    select:focus {
+      border-color: #4CAF50;
+      outline: none;
+    }
+
+    .checkbox-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .checkbox-group label {
+      font-weight: normal;
+    }
+
+    input[type="checkbox"] {
+      margin-right: 8px;
+    }
+
+    .form-group .form-actions {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    input[type="submit"],
+    input[type="reset"] {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      color: #fff;
+      transition: background-color 0.3s ease;
+    }
+
+    input[type="submit"] {
+      background-color: #4CAF50;
+    }
+
+    input[type="reset"] {
+      background-color: #f44336;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+
+    input[type="reset"]:hover {
+      background-color: #e53935;
+    }
+  </style>
+
+
+     
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="#">MyTutorials</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="fas fa-home"></i> Home</a>
+        </li>
+ <li class="nav-item">
+          <a class="nav-link" href="#teachers"><i class="fas fa-chalkboard-teacher"></i>teachers</a>
+        </li
+ <li class="nav-item">
+          <a class="nav-link" href="#form-container"><i class="fas fa-user-plus"></i>Ragistation</a>
+        </li
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="serviceDropdown" role="button" data-toggle="dropdown">
+            <i class="fas fa-concierge-bell"></i> Service
+          </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Online Tuition</a>
+            <a class="dropdown-item" href="#">Online Training</a>
+            <a class="dropdown-item" href="#">onlineCertificate</a>
+            <a class="dropdown-item" href="#">Online Internship</a>
+
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="courseDropdown" role="button" data-toggle="dropdown">
+            <i class="fas fa-book"></i> Course
+          </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">HTML</a>
+            <a class="dropdown-item" href="#">CSS</a>
+            <a class="dropdown-item" href="#">JavaScript</a>
+            <a class="dropdown-item" href="#">Bootstrap</a>
+            <a class="dropdown-item" href="#">Node.js</a>
+            <a class="dropdown-item" href="#">React.js</a>
+            <a class="dropdown-item" href="#">Python</a>
+            <a class="dropdown-item" href="#">jQuery</a>
+            <a class="dropdown-item" href="#">MySQL</a>
+            <a class="dropdown-item" href="#">PHP</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about-container"><i class="fas fa-info-circle"></i> About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#footer"><i class="fas fa-envelope"></i> Contact</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+<!-- Hero Section with Image Slider -->
+<section class="hero">
+  <div id="heroCarousel" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <!-- Carousel items - Replace the image URLs as needed -->
+      <div class="carousel-item active">
+        <img src="https://media.geeksforgeeks.org/geeksforgeeks/HowtoInsertImagesinHTMLAnHTMLImageTutorial/HTMLImages20240404154716.jpg" class="d-block w-100" alt="Image 1>
+      </div>
+      <div class="carousel-item">
+        <img src="https://i.sstatic.net/VbCFZ.jpg"class="d-block w-100" alt="Image 2>
+      </div>
+      <div class="carousel-item">
+        <img src="data:image/png;base64,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" class="d-block w-100" alt="Image 3">
+      </div>
+      <div class="carousel-item">
+        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20220818154524/CompleteGuideonStringInterviewPreparation.jpg" class="d-block w-100" alt="Image 4">
+      </div>
+      <div class="carousel-item">
+        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20230331172641/NodeJS-copy.webp" class="d-block w-100" alt="Image 5">
+      </div>
+      <div class="carousel-item">
+        <img src="https://i.ytimg.com/vi/sZoCe5IFWpY/maxresdefault.jpg" class="d-block w-100"alt="Image 6">
+      </div>
+      <div class="carousel-item">
+        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20231211135520/Tailwind-CSS.webp" class="d-block w-100" alt="Image 7">
+      </div>
+      <div class="carousel-item">
+        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20230402215521/Off-Campus-Internships-For-CS-Students.webp" class="d-block w-100" alt="Image 8">
+      </div>
+      <div class="carousel-item">
+        <img src="https://media.geeksforgeeks.org/geeksforgeeks/2TipsTricksforCompetitiveProgramming/TipsTricksforCompetitiveProgramming20230607142232.jpg" class="d-block w-100" alt="Image 9">
+      </div>
+      <div class="carousel-item">
+        <img src="https://i.ytimg.com/vi/U_nugSKtbSk/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLAV_xOxOUDhQ3rpp4sJDb589-3I8g" class="d-block w-100" alt="Image 10">
+      </div>
+    </div>
+    <!-- Carousel Controls -->
+    <a class="carousel-control-prev" href="#heroCarousel" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#heroCarousel" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</section>
+<!-- Course Details Section with Images Surrounding the Button -->
+<section class="course-details container">
+  <div class="row justify-content-center">
+    <!-- Top Image -->
+    <div class="col-12 text-center">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuXLvs-6m8iH5a3zMXQhvrFFpjPdSNdwCiEg&s" alt="Top Image">
+    </div>
+  </div>
+  <div class="row align-items-center">
+    <!-- Left Image -->
+    <div class="col-4 text-right d-none d-md-block">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuqwX97NrSnwoifr4VkxRpjnXi2osY5OZuSw&s" alt="Left Image">
+    </div>
+    <!-- Button and Description in the Center -->
+    <div class="col-12 col-md-4 text-center">
+      <h2>Explore Our Courses</h2>
+      <p>Learn popular web development technologies with our easy-to-follow tutorials.</p>
+      <button class="btn btn-view-courses" onclick="toggleCourses()">View Courses</button>
+    </div>
+    <!-- Right Image -->
+    <div class="col-4 text-left d-none d-md-block">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQj1QOLTgnnejfh2pRjH_sfe8BRRgE4Klhsag&s" alt="Right Image">
+    </div>
+  </div>
+</section>
+
+<!-- Courses Section -->
+<section id="courses" class="text-center mt-5">
+  <div class="container">
+    <h3 class="mb-4">Our Courses</h3>
+    <div class="d-flex flex-wrap justify-content-center">
+      <div class="course-box">HTML</div>
+      <div class="course-box">CSS</div>
+      <div class="course-box">JavaScript</div>
+      <div class="course-box">Bootstrap</div>
+      <div class="course-box">PHP</div>
+      <div class="course-box">Node.js</div>
+      <div class="course-box">SQL</div>
+      <div class="course-box">Tailwind CSS</div>
+      <div class="course-box">React.js</div>
+    </div>
+  </div>
+</section>
+<!-- Services Section -->
+
+<section class="service-section">
+  <h2>Our Services</h2>
+
+  <div id="service1" class="service-box" onmouseover="stopAnimation()" onmouseout="resumeAnimation()">
+    <div class="service-content">
+      <h4>Online Tuition</h4>
+      <button class="btn-view-details" 
+        onclick="toggleDetails('details1', 'service1')">View Details</button>
+      <div id="details1" class="details">
+        <p>Our online tuition service provides one-on-one or group lessons on various subjects, including Mathematics, Science, English, and more.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="service2" class="service-box" onmouseover="stopAnimation()" onmouseout="resumeAnimation()">
+    <div class="service-content">
+      <h4>Online Training</h4>
+      <button class="btn-view-details" 
+        onclick="toggleDetails('details2', 'service2')">View Details</button>
+      <div id="details2" class="details">
+        <p>Get professional skill development in Web Development, Design, and Business Skills with our online training programs.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="service3" class="service-box" onmouseover="stopAnimation()" onmouseout="resumeAnimation()">
+    <div class="service-content">
+      <h4>Online Internship</h4>
+      <button class="btn-view-details" 
+        onclick="toggleDetails('details3', 'service3')">View Details</button>
+      <div id="details3" class="details">
+        <p>Gain hands-on experience through our online internship programs in various fields such as IT, Marketing, and Content Writing.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="service4" class="service-box" onmouseover="stopAnimation()" onmouseout="resumeAnimation()">
+    <div class="service-content">
+      <h4>Online Certificate</h4>
+      <button class="btn-view-details" 
+        onclick="toggleDetails('details4', 'service4')">View Details</button>
+      <div id="details4" class="details">
+        <p>Earn certifications in various fields like Python, Web Development, and Digital Marketing by completing our online courses.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="teachers">
+  <!-- Teacher 1 -->
+  <div class="teacher-card">
+    <div class="photo-container">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAVG-j4wcfEPxmP8pPzFT5mWFcPidKyYtKeA&s" alt="Teacher 1" class="teacher-photo">
+    </div>
+    <div class="teacher-details">
+      <h3>Teacher 1</h3>
+      <p>Subject: HTML</p>
+      <p>Location: RISHIKESH</p>
+      <button class="show-details-btn" onclick="showDetails('teacher1')">View Details</button>
+    </div>
+  </div>
+
+  <!-- Teacher 2 -->
+  <div class="teacher-card">
+    <div class="photo-container">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSU5H4jCmhH0BOHclWDTve-sPALU046j182Mg&s" alt="Teacher 2" class="teacher-photo">
+    </div>
+    <div class="teacher-details">
+      <h3>Teacher 2</h3>
+      <p>Subject: Science</p>
+      <p>Location: California</p>
+      <button class="show-details-btn" onclick="showDetails('teacher2')">View Details</button>
+    </div>
+  </div>
+
+  <!-- Teacher 3 -->
+  <div class="teacher-card">
+    <div class="photo-container">
+      <img src="data:image/jpeg;base64,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" alt="Teacher 3" class="teacher-photo">
+    </div>
+    <div class="teacher-details">
+      <h3>Teacher 3</h3>
+      <p>Subject: English</p>
+      <p>Location: Texas</p>
+      <button class="show-details-btn" onclick="showDetails('teacher3')">View Details</button>
+    </div>
+  </div>
+
+  <!-- Teacher 4 -->
+  <div class="teacher-card">
+    <div class="photo-container">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQicemPUTwY9p1GrpB_-3wjgxlROd7f6OhsLg&s" alt="Teacher 4" class="teacher-photo">
+    </div>
+    <div class="teacher-details">
+      <h3>Teacher 4</h3>
+      <p>Subject: PHP</p>
+      <p>Location: DEHRADUN</p>
+      <button class="show-details-btn" onclick="showDetails('teacher4')">View Details</button>
+    </div>
+  </div>
+
+  <!-- Teacher 5 -->
+  <div class="teacher-card">
+    <div class="photo-container">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVjakdlwjqHkqRZ7MX0n6gGR5ZF5T2IHv1-A&s" alt="Teacher 5" class="teacher-photo">
+    </div>
+    <div class="teacher-details">
+      <h3>Teacher 5</h3>
+      <p>Subject: Geography</p>
+      <p>Location: Ohio</p>
+      <button class="show-details-btn" onclick="showDetails('teacher5')">View Details</button>
+    </div>
+  </div>
+
+  <!-- Teacher 6 -->
+  <div class="teacher-card">
+    <div class="photo-container">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoOeNQwcJmfcLFPkU8r0jZY-9CqgDOCdJS0Q&s" alt="Teacher 6" class="teacher-photo">
+    </div>
+    <div class="teacher-details">
+      <h3>Teacher 6</h3>
+      <p>Subject: NODEJS</p>
+      <p>Location: RAJISTHAN</p>
+      <button class="show-details-btn" onclick="showDetails('teacher6')">View Details</button>
+    </div>
+  </div>
+
+  <!-- Teacher 7 -->
+  <div class="teacher-card">
+    <div class="photo-container">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRORLsMNoi9yCs3rTi7xOUaSY2KUMld_gm9Ag&s" alt="Teacher 7" class="teacher-photo">
+    </div>
+    <div class="teacher-details">
+      <h3>Teacher 7</h3>
+      <p>Subject: Physics</p>
+      <p>Location: Illinois</p>
+      <button class="show-details-btn" onclick="showDetails('teacher7')">View Details</button>
+    </div>
+  </div>
+
+  <!-- Teacher 8 -->
+  <div class="teacher-card">
+    <div class="photo-container">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9_dpc7HcTWZ9Sp61m6HezI7bvi8tJfp1lrQ&s" alt="Teacher 8" class="teacher-photo">
+    </div>
+    <div class="teacher-details">
+      <h3>Teacher 8</h3>
+      <p>Subject: Computer Science</p>
+      <p>Location: Washington</p>
+      <button class="show-details-btn" onclick="showDetails('teacher8')">View Details</button>
+    </div>
+  </div>
+
+  <!-- Teacher 9 -->
+  <div class="teacher-card">
+    <div class="photo-container">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSB2LrDcoopYiGxFCOPjHexwWlXfwI5vdSnXQ&s" alt="Teacher 9" class="teacher-photo">
+    </div>
+    <div class="teacher-details">
+      <h3>Teacher 9</h3>
+      <p>Subject: Biology</p>
+      <p>Location: Oregon</p>
+      <button class="show-details-btn" onclick="showDetails('teacher9')">View Details</button>
+    </div>
+  </div>
+
+  <!-- Teacher 10 -->
+  <div class="teacher-card">
+    <div class="photo-container">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVztriv621aAliu_ncICDyukytNvBNrzFAUg&s" alt="Teacher 10" class="teacher-photo">
+    </div>
+    <div class="teacher-details">
+      <h3>Teacher 10</h3>
+      <p>Subject: Art</p>
+      <p>Location: Nevada</p>
+      <button class="show-details-btn" onclick="showDetails('teacher10')">View Details</button>
+    </div>
+  </div>
+</div>
+
+<!-- Teacher Details Modal -->
+<div id="teacher-details-modal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <div id="teacher-details">
+      <!-- Details will be inserted here by JavaScript -->
+    </div>
+  </div>
+</div>
+<div class="content-wrapper">
+  <!-- Main content area -->
+  <div class="content">
+    <!-- Page content goes here -->
+  </div>
+<div id="form-container">
+  <form>
+    <fieldset>
+      <legend>Course Registration Form</legend>
+
+      <div class="form-group">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number:</label>
+        <input type="number" id="phone" name="phone" required>
+      </div>
+
+      <div class="form-group">
+        <label for="course">Choose Course:</label>
+        <select id="course" name="course" required>
+          <option value="">Select a course</option>
+          <option value="html">HTML</option>
+          <option value="css">CSS</option>
+          <option value="javascript">JavaScript</option>
+          <option value="bootstrap">Bootstrap</option>
+          <option value="php">PHP</option>
+          <option value="nodejs">Node.js</option>
+          <option value="python">Python</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Select Preferred Time Slots:</label>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="time" value="morning"> Morning (8 AM - 10 AM)</label>
+          <label><input type="checkbox" name="time" value="afternoon"> Afternoon (12 PM - 2 PM)</label>
+          <label><input type="checkbox" name="time" value="evening"> Evening (4 PM - 6 PM)</label>
+          <label><input type="checkbox" name="time" value="weekend"> Weekend Classes</label>
+        </div>
+      </div>
+
+      <div class="form-group form-actions">
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+      </div>
+    </fieldset>
+  </form>
+</div>
+<div id="about-container">
+  <h2>About Us - Experience</h2>
+  <p>Our instructors have extensive experience in various subjects. Below is the experience level for each subject we offer:</p>
+
+  <div class="d-flex flex-wrap justify-content-center">
+    <!-- HTML Experience -->
+    <div class="text-center">
+      <div class="meter-circle" style="--exp: 90%;">
+        <div class="meter"></div>
+        <div class="percentage">90%</div>
+      </div>
+      <div class="subject-label">HTML</div>
+    </div>
+    
+    <!-- CSS Experience -->
+    <div class="text-center">
+      <div class="meter-circle" style="--exp: 80%;">
+        <div class="meter"></div>
+        <div class="percentage">80%</div>
+      </div>
+      <div class="subject-label">CSS</div>
+    </div>
+
+    <!-- JavaScript Experience -->
+    <div class="text-center">
+      <div class="meter-circle" style="--exp: 75%;">
+        <div class="meter"></div>
+        <div class="percentage">75%</div>
+      </div>
+      <div class="subject-label">JavaScript</div>
+    </div>
+
+    <!-- Bootstrap Experience -->
+    <div class="text-center">
+      <div class="meter-circle" style="--exp: 85%;">
+        <div class="meter"></div>
+        <div class="percentage">85%</div>
+      </div>
+      <div class="subject-label">Bootstrap</div>
+    </div>
+
+    <!-- Node.js Experience -->
+    <div class="text-center">
+      <div class="meter-circle" style="--exp: 70%;">
+        <div class="meter"></div>
+        <div class="percentage">70%</div>
+      </div>
+      <div class="subject-label">Node.js</div>
+    </div>
+
+    <!-- PHP Experience -->
+    <div class="text-center">
+      <div class="meter-circle" style="--exp: 65%;">
+        <div class="meter"></div>
+        <div class="percentage">65%</div>
+      </div>
+      <div class="subject-label">PHP</div>
+    </div>
+
+    <!-- SQL Experience -->
+    <div class="text-center">
+      <div class="meter-circle" style="--exp: 60%;">
+        <div class="meter"></div>
+        <div class="percentage">60%</div>
+      </div>
+      <div class="subject-label">SQL</div>
+    </div>
+
+    <!-- React.js Experience -->
+    <div class="text-center">
+      <div class="meter-circle" style="--exp: 50%;">
+        <div class="meter"></div>
+        <div class="percentage">50%</div>
+      </div>
+      <div class="subject-label">React.js</div>
+    </div>
+  </div>
+</div>
+
+
+
+  <!-- Footer Section -->
+  <footer id="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h4>Connect with Us</h4>
+          <div class="social-icons">
+            <a href="https://wa.me/your-number" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="https://facebook.com/your-page" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com/your-handle" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a href="https://instagram.com/your-profile" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://snapchat.com/add/your-id" target="_blank"><i class="fab fa-snapchat"></i></a>
+            <a href="https://www.google.com" target="_blank"><i class="fab fa-google"></i></a>
+            <a href="https://byjus.com" target="_blank"><i class="fas fa-graduation-cap"></i></a>
+            <a href="https://telegram.me/your-username" target="_blank"><i class="fab fa-telegram"></i></a>
+            <a href="https://youtube.com/your-channel" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://github.com/your-username" target="_blank"><i class="fab fa-github"></i></a>
+          </div>
+
+          <div class="footer-contact mt-4">
+            <p>Contact Us: +91-1234567890 | email@example.com</p>
+            <p>&copy; 2024 Your Website Name. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+ function toggleCourses() {
+    var coursesSection = document.getElementById('courses');
+    
+    // Toggle visibility
+    if (coursesSection.style.display === "none" || coursesSection.style.display === "") {
+      coursesSection.style.display = "block";
+    } else {
+      coursesSection.style.display = "none";
+    }
+    
+    // Optionally, scroll the user to the courses section if it's made visible
+    if (coursesSection.style.display === "block") {
+      coursesSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+  
+  // Initially hide the courses section
+  document.getElementById('courses').style.display = "none";
+
+let animationStopped = false; // Track if animation is stopped
+
+  // Function to stop animation of all boxes when cursor is over any box
+  function stopAnimation() {
+    document.querySelectorAll('.service-box').forEach(function(box) {
+      box.style.animation = 'none';
+    });
+    animationStopped = true; // Mark animation as stopped
+  }
+
+  // Function to resume animation for all boxes when cursor leaves the box
+  function resumeAnimation() {
+    if (animationStopped) {
+      document.querySelectorAll('.service-box').forEach(function(box) {
+        box.style.animation = 'rotate360 3s infinite linear'; // Resume rotation animation
+      });
+      animationStopped = false; // Mark animation as resumed
+    }
+  }
+
+  // Function to toggle the details section when the "View Details" button is clicked
+  function toggleDetails(detailsId, serviceId) {
+    var details = document.getElementById(detailsId);
+    var button = document.getElementById(serviceId).querySelector('.btn-view-details');
+
+    details.style.display = (details.style.display === "none" || details.style.display === "") ? "block" : "none";
+    button.innerHTML = details.style.display === "block" ? "Hide Details" : "View Details";
+
+    // Hide the details after 10 seconds
+    if (details.style.display === "block") {
+      setTimeout(function() {
+        details.style.display = "none";
+        button.innerHTML = "View Details";
+      }, 5000); // 10 seconds
+    }
+  }
+  function showDetails(teacherId) {
+    // Define teacher details
+    let teacherDetails = {
+      teacher1: {
+        name: "Teacher 1",
+        subject: "Math",
+        location: "New York",
+        bio: "A passionate Math teacher with over 10 years of experience."
+      },
+      teacher2: {
+        name: "Teacher 2",
+        subject: "Science",
+        location: "California",
+        bio: "A highly skilled Science teacher specializing in Physics and Chemistry."
+      },
+      teacher3: {
+        name: "Teacher 3",
+        subject: "English",
+        location: "Texas",
+        bio: "An expert in literature and language with a creative teaching approach."
+      },
+      teacher4: {
+        name: "Teacher 4",
+        subject: "History",
+        location: "Florida",
+        bio: "A historian with deep knowledge of global history and ancient civilizations."
+      },
+      teacher5: {
+        name: "Teacher 5",
+        subject: "Geography",
+        location: "Ohio",
+        bio: "A Geography teacher with a love for maps and environmental science."
+      },
+      teacher6: {
+        name: "Teacher 6",
+        subject: "Chemistry",
+        location: "Michigan",
+        bio: "A passionate Chemistry teacher with hands-on experiment-based lessons."
+      },
+      teacher7: {
+        name: "Teacher 7",
+        subject: "Physics",
+        location: "Illinois",
+        bio: "A Physics teacher dedicated to making complex concepts understandable."
+      },
+      teacher8: {
+        name: "Teacher 8",
+        subject: "Computer Science",
+        location: "Washington",
+        bio: "A Computer Science teacher who enjoys coding and creating innovative solutions."
+      },
+      teacher9: {
+        name: "Teacher 9",
+        subject: "Biology",
+        location: "Oregon",
+        bio: "A Biology teacher with a passion for ecology and the environment."
+      },
+      teacher10: {
+        name: "Teacher 10",
+        subject: "Art",
+        location: "Nevada",
+        bio: "An art teacher specializing in drawing, painting, and digital art techniques."
+      }
+    };
+
+    // Get teacher's details and insert them into the modal
+    let details = teacherDetails[teacherId];
+    document.getElementById('teacher-details').innerHTML = `
+      <h2>${details.name}</h2>
+      <p><strong>Subject:</strong> ${details.subject}</p>
+      <p><strong>Location:</strong> ${details.location}</p>
+      <p><strong>Bio:</strong> ${details.bio}</p>
+    `;
+
+    // Display the modal
+    document.getElementById('teacher-details-modal').style.display = "block";
+  }
+
+  function closeModal() {
+    document.getElementById('teacher-details-modal').style.display = "none";
+  }
+
+ </script>
+</body>
+</html>
